@@ -63,5 +63,24 @@ def get_dollars_in_flight(data, output):
   output['severeImpact']['dollarsInFlight'] = \
       int((s_impact_infections * population_perc * population_inc) / days)
 
+
+def estimation(data):
+  output = {
+      'data': data,
+      'impact': {},
+      'severeImpact': {}
+  }
+
+  get_currently_infected_people(data, output)
+  get_infections_by_requested_time(data, output)
+  get_severe_cases_by_requested_time(output)
+  get_hospital_beds_by_requested_time(data, output)
+  get_cases_for_icu_by_requested_time(output)
+  get_cases_for_ventilators_by_requested_time(output)
+  get_dollars_in_flight(data, output)
+
+  return output
+
+
 def estimator(data):
-  return data
+  return estimation(data)
