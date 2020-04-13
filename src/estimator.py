@@ -21,5 +21,11 @@ def get_infections_by_requested_time(data, output):
 
   output['severeImpact']['infectionsByRequestedTime'] = int(output['severeImpact']['currentlyInfected'] * (2 ** int(days / 3)))
 
+
+def get_severe_cases_by_requested_time(output):
+  output['impact']['severeCasesByRequestedTime'] = int(0.15 * output['impact']['infectionsByRequestedTime'])
+
+  output['severeImpact']['severeCasesByRequestedTime'] = int(0.15 * output['severeImpact']['infectionsByRequestedTime'])
+
 def estimator(data):
   return data
