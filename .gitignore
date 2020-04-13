@@ -2,6 +2,10 @@
 
 # if using VSCode
 .vscode/
+/virtual
+
+virtual/
+.virtual
 
 # flake8 config
 setup.cfg
