@@ -38,5 +38,11 @@ def get_hospital_beds_by_requested_time(data, output):
   output['severeImpact']['hospitalBedsByRequestedTime'] = int(available_beds - s_impact_severe_cases)
 
 
+def get_cases_for_icu_by_requested_time(output):
+  output['impact']['casesForICUByRequestedTime'] = int(0.05 * output['impact']['infectionsByRequestedTime'])
+
+  output['severeImpact']['casesForICUByRequestedTime'] = \
+      int(0.05 * output['severeImpact']['infectionsByRequestedTime'])
+
 def estimator(data):
   return data
