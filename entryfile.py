@@ -1,7 +1,7 @@
 from simplexml import dumps
-from flask import Flask, request, jsonify,
-from .estimator import estimator
+from flask import Flask, request, jsonify, g
 import time
+from src.estimator import estimator
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
