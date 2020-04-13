@@ -44,5 +44,11 @@ def get_cases_for_icu_by_requested_time(output):
   output['severeImpact']['casesForICUByRequestedTime'] = \
       int(0.05 * output['severeImpact']['infectionsByRequestedTime'])
 
+
+def get_cases_for_ventilators_by_requested_time(output):
+  output['impact']['casesForVentilatorsByRequestedTime'] = int(0.02 * output['impact']['infectionsByRequestedTime'])
+
+  output['severeImpact']['casesForVentilatorsByRequestedTime'] = int(0.02 * output['severeImpact']['infectionsByRequestedTime'])
+
 def estimator(data):
   return data
